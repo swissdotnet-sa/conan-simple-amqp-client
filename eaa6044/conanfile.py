@@ -4,7 +4,7 @@ import os
 
 class SimpleAmqpClientConan(ConanFile):
     name = 'simple-amqp-client'
-    version = 'auth-fixed'
+    version = 'eaa6044'
     commit_hash = 'eaa6044cecbd84e5e77ed0cd223515358c982605'
     license = 'MIT'
     homepage = 'https://github.com/alanxz/SimpleAmqpClient'
@@ -21,9 +21,9 @@ class SimpleAmqpClientConan(ConanFile):
     
     def source(self):
         source_url = self.homepage
-        git = tools.Git(folder=_source_subfolder) 
+        git = tools.Git(folder=self._source_subfolder) 
         git.clone(source_url+".git")
-        git.checkout(commit_hash)
+        git.checkout(self.commit_hash)
 
     
     # Library requirements.
